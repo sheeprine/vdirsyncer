@@ -638,7 +638,7 @@ class CaldavStorage(DavStorage):
 
         for caldavfilter in caldavfilters:
             xml = data.format(caldavfilter=caldavfilter)
-            response = self.session.request('REPORT', '', data=xml,
+            response = self.session.request('PROPFIND', '', data=xml,
                                             headers=headers)
             root = _parse_xml(response.content)
             rv = self._parse_prop_responses(root)

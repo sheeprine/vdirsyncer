@@ -122,7 +122,9 @@ class StorageInfo(object):
                 raise IdentConflict(storage=self.storage,
                                     hrefs=[props['href'], href])
             if props['etag'] != etag:
-                raise SyncError('Etag changed during sync.')
+                raise SyncError('Etag changed during sync,'
+                                'expected: {} was: {}.'.format(props['etag'],
+                                                               etag))
 
 
 def sync(storage_a, storage_b, status, conflict_resolution=None,

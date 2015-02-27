@@ -5,7 +5,7 @@ import sys
 import threading
 
 import requests
-from requests.packages.urllib3.poolmanager import PoolManager
+from urllib3.poolmanager import PoolManager
 
 from .compat import iteritems, urlparse
 from .. import exceptions, log
